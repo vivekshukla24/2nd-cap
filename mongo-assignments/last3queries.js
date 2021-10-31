@@ -1,9 +1,9 @@
-Atlas atlas-3gp48w-shard-0 [primary] mongo_practice> db.movies.update({title:'The Hobbit: An Unexpected journbey'},{$set:{synopsis: 'A reluctant hobbit,bilbo baggins, sets out to the lonely mountain with a spirited gorup of dwareves to reclaim thier mountain home - and the gold within it-from the dragon smaug'}})
+Atlas atlas-3gp48w-shard-0 [primary] mongo_practice> db.movies.update({title:'THe Hobbit: An Unexpected journey'},{$set:{synopsis: 'A reluctant hobbit,bilbo baggins, sets out to the lonely mountain with a spirited gorup of dwareves to reclaim thier mountain home - and the gold within it-from the dragon smaug'}})
 {
   acknowledged: true,
   insertedId: null,
-  matchedCount: 0,
-  modifiedCount: 0,
+  matchedCount: 1,
+  modifiedCount: 1,
   upsertedCount: 0
 }
 Atlas atlas-3gp48w-shard-0 [primary] mongo_practice> db.movies.update({title:'The Hobbit: The Desolation of Smaug'},{$set:{synopsis: 'The dwarves, along with bilbo baggins and gandalf the grey, continue thier quest top reclaim erebor, thier homeland form smaug.Bilbo baggins is in possesion of a mysterious and magical ring'}})
