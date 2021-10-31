@@ -69,3 +69,15 @@ Atlas atlas-3gp48w-shard-0 [primary] mongo_practice> db.movies.find({$text:{$sea
     synopsis: 'The dwarves, along with bilbo baggins and gandalf the grey, continue thier quest top reclaim erebor, thier homeland form smaug.Bilbo baggins is in possesion of a mysterious and magical ring'
   }
 ]
+
+Atlas atlas-3gp48w-shard-0 [primary] mongo_practice> db.movies.find({ $text:{$search:"gold"},$text:{$search:"dragon"}})
+[
+  {
+    _id: ObjectId("617c1808bb4c08c65637bd1c"),
+    title: 'THe Hobbit: An Unexpected journey',
+    writer: 'J.R.R Tolkein',
+    year: 2012,
+    franchise: 'The Hobbit',
+    synopsis: 'A reluctant hobbit,bilbo baggins, sets out to the lonely mountain with a spirited gorup of dwareves to reclaim thier mountain home - and the gold within it-from the dragon smaug'
+  }
+]
