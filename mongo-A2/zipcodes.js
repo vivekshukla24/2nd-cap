@@ -198,3 +198,9 @@ Type "it" for more
 
 Atlas atlas-3gp48w-shard-0 [primary] population> db.zipcodes.aggregate([{$group:{_id:"$state"}},{$count:"Number_of_states"}])
 [ { Number_of_states: 51 } ]
+
+
+
+
+Atlas atlas-3gp48w-shard-0 [primary] population> db.zipcodes.aggregate([{$match:{city:"ATLANTA"}},{$group:{_id:'$city',totalpop:{$sum:"$pop"}}}])
+[ { _id: 'ATLANTA', totalpop: 630046 } ]
