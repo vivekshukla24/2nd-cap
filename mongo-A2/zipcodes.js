@@ -193,3 +193,8 @@ Atlas atlas-3gp48w-shard-0 [primary] population> db.zipcodes.aggregate([{$match:
   }
 ]
 Type "it" for more
+
+
+
+Atlas atlas-3gp48w-shard-0 [primary] population> db.zipcodes.aggregate([{$group:{_id:"$state"}},{$count:"Number_of_states"}])
+[ { Number_of_states: 51 } ]
