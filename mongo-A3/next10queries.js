@@ -33,3 +33,13 @@ Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$matc
     name: 'Two Boots Grand Central'
   }
 ]
+
+
+//12. Same as above but lattitude -> longitude
+
+Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$match:{cuisine:{$ne:"American "},"grades.score":{$gt:70},"address.coord.1":{$lt:-65.754168}}},{$project:{name:1,cuisine:1,"address.coord":1}}])
+
+//won't give results becuase it has no document like this
+
+
+//13. 
