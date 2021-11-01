@@ -701,3 +701,17 @@ Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$matc
     name: 'West 79Th Street Boat Basin Cafe'
   }
 ]
+
+
+//10.  to print the name of the restaurant who are located in a lattitude less than -95.754168 in value
+
+
+Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$match:{"address.coord.0":{$lt:-95.754168}}},{$project:{name:1}}])
+[
+  { _id: ObjectId("617faeb1a44cc5a6b43fa22c"), name: 'Burger King' },
+  { _id: ObjectId("617faeb2a44cc5a6b43fa597"), name: "Cascarino'S" },
+  {
+    _id: ObjectId("617faeb2a44cc5a6b43faa3d"),
+    name: 'Sports Center At Chelsea Piers (Sushi Bar)'
+  }
+]
