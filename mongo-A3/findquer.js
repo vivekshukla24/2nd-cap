@@ -670,3 +670,34 @@ Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$matc
   }
 ]
 Type "it" for more
+
+//8. To print name of restaurant that achieved score of above 90
+
+
+Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$match:{"grades.score":{$gt:90}}},{$project:{name:1}}])
+[
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9d42"),
+    name: "Murals On 54/Randolphs'S"
+  },
+  { _id: ObjectId("617faeb1a44cc5a6b43f9de3"), name: 'Gandhi' },
+  { _id: ObjectId("617faeb1a44cc5a6b43f9f46"), name: 'Bella Napoli' }
+]
+
+
+//9. To print name of restaurant that achieved score of above 80 but less than 100
+
+
+Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$match:{"grades.score":{$gt:80,$lt:100}}},{$project:{name:1}}])
+[
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9d42"),
+    name: "Murals On 54/Randolphs'S"
+  },
+  { _id: ObjectId("617faeb1a44cc5a6b43f9de3"), name: 'Gandhi' },
+  { _id: ObjectId("617faeb1a44cc5a6b43f9f46"), name: 'Bella Napoli' },
+  {
+    _id: ObjectId("617faeb2a44cc5a6b43fa7b2"),
+    name: 'West 79Th Street Boat Basin Cafe'
+  }
+]
