@@ -42,4 +42,78 @@ Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$matc
 //won't give results becuase it has no document like this
 
 
-//13. 
+//13. The restaurant should not be american acc to cuisine, grade should be A, not brooklyn as borough
+
+
+Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$match:{cuisine:{$ne:"American "},"grades.grade":'A',borough:{$ne:'Brooklyn'}}},{$project:{name:1,cuisine:1,borough:1,"address.coord":1,_id:0}}])
+[
+  {
+    address: { coord: [ -73.856077, 40.848447 ] },
+    borough: 'Bronx',
+    cuisine: 'Bakery',
+    name: 'Morris Park Bake Shop'
+  },
+  {
+    address: { coord: [ -73.98513559999999, 40.7676919 ] },
+    borough: 'Manhattan',
+    cuisine: 'Irish',
+    name: 'Dj Reynolds Pub And Restaurant'
+  },
+  {
+    address: { coord: [ -73.8601152, 40.7311739 ] },
+    borough: 'Queens',
+    cuisine: 'Jewish/Kosher',
+    name: 'Tov Kosher Kitchen'
+  },
+  {
+    address: { coord: [ -74.1377286, 40.6119572 ] },
+    borough: 'Staten Island',
+    cuisine: 'Jewish/Kosher',
+    name: 'Kosher Island'
+  },
+  {
+    address: { coord: [ -73.7032601, 40.7386417 ] },
+    borough: 'Queens',
+    cuisine: 'Ice Cream, Gelato, Yogurt, Ices',
+    name: 'Carvel Ice Cream'
+  },
+  {
+    address: { coord: [ -73.839297, 40.78147 ] },
+    borough: 'Queens',
+    cuisine: 'Delicatessen',
+    name: "Sal'S Deli"
+  },
+  {
+    address: { coord: [ -73.9925306, 40.7309346 ] },
+    borough: 'Manhattan',
+    cuisine: 'Delicatessen',
+    name: "Bully'S Deli"
+  },
+  {
+    address: { coord: [ -73.94024739999999, 40.7623288 ] },
+    borough: 'Queens',
+    cuisine: 'Delicatessen',
+    name: "Steve Chu'S Deli & Grocery"
+  },
+  {
+    address: { coord: [ -73.976112, 40.786714 ] },
+    borough: 'Manhattan',
+    cuisine: 'Chicken',
+    name: "Harriet'S Kitchen"
+  },
+  {
+    address: { coord: [ -73.8642349, 40.75356 ] },
+    borough: 'Queens',
+    cuisine: 'Chinese',
+    name: 'Ho Mei Restaurant'
+  },
+  {
+    address: { coord: [ -74.0085357, 40.70620539999999 ] },
+    borough: 'Manhattan',
+    cuisine: 'Turkish',
+    name: 'The Country Cafe'
+  }
+]
+Type "it" for more
+
+14.
