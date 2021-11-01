@@ -1,3 +1,4 @@
+// printing all the states with thier total populations
 Atlas atlas-3gp48w-shard-0 [primary] population> db.zipcodes.aggregate([{$group:{_id:'$state',totalpop:{$sum:"$pop"}}}])
 [
   { _id: 'MD', totalpop: 4781379 },
