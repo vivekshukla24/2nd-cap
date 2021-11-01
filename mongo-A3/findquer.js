@@ -454,3 +454,219 @@ Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$matc
     name: 'Happy Garden'
   }
 ]
+
+//6. to print the names of all restaurants in the borough bronx
+
+
+Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$match:{borough:'Bronx'}},{$project:{borough:1,name:1}}])
+[
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9be4"),
+    borough: 'Bronx',
+    name: 'Morris Park Bake Shop'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9bee"),
+    borough: 'Bronx',
+    name: 'Wild Asia'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c03"),
+    borough: 'Bronx',
+    name: 'Carvel Ice Cream'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c07"),
+    borough: 'Bronx',
+    name: 'Happy Garden'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c19"),
+    borough: 'Bronx',
+    name: 'Happy Garden'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c21"),
+    borough: 'Bronx',
+    name: 'Manhem Club'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c39"),
+    borough: 'Bronx',
+    name: 'The New Starling Athletic Club Of The Bronx'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c51"),
+    borough: 'Bronx',
+    name: 'Yankee Tavern'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c64"),
+    borough: 'Bronx',
+    name: 'Mcdwyers Pub'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c7d"),
+    borough: 'Bronx',
+    name: 'The Punch Bowl'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c88"),
+    borough: 'Bronx',
+    name: 'Munchtime'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c8a"),
+    borough: 'Bronx',
+    name: 'Ihop'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c8f"),
+    borough: 'Bronx',
+    name: "Lulu'S Coffee Shop"
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c95"),
+    borough: 'Bronx',
+    name: 'Marina Delray'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9cba"),
+    borough: 'Bronx',
+    name: "The Lark'S Nest"
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9cbb"),
+    borough: 'Bronx',
+    name: 'Terrace Cafe'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9cbc"),
+    borough: 'Bronx',
+    name: 'African Terrace'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9cbd"),
+    borough: 'Bronx',
+    name: 'Cool Zone'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9cbe"),
+    borough: 'Bronx',
+    name: 'Beaver Pond'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9cbf"),
+    borough: 'Bronx',
+    name: 'African Market (Baboon Cafe)'
+  }
+]
+Type "it" for more
+
+
+//7. skipping first 5 borough bronx restaurants
+
+Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$match:{borough:'Bronx'}},{$skip:5},{$project:{borough:1,name:1}}])
+[
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c21"),
+    borough: 'Bronx',
+    name: 'Manhem Club'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c39"),
+    borough: 'Bronx',
+    name: 'The New Starling Athletic Club Of The Bronx'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c51"),
+    borough: 'Bronx',
+    name: 'Yankee Tavern'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c64"),
+    borough: 'Bronx',
+    name: 'Mcdwyers Pub'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c7d"),
+    borough: 'Bronx',
+    name: 'The Punch Bowl'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c88"),
+    borough: 'Bronx',
+    name: 'Munchtime'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c8a"),
+    borough: 'Bronx',
+    name: 'Ihop'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c8f"),
+    borough: 'Bronx',
+    name: "Lulu'S Coffee Shop"
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9c95"),
+    borough: 'Bronx',
+    name: 'Marina Delray'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9cba"),
+    borough: 'Bronx',
+    name: "The Lark'S Nest"
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9cbb"),
+    borough: 'Bronx',
+    name: 'Terrace Cafe'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9cbc"),
+    borough: 'Bronx',
+    name: 'African Terrace'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9cbd"),
+    borough: 'Bronx',
+    name: 'Cool Zone'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9cbe"),
+    borough: 'Bronx',
+    name: 'Beaver Pond'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9cbf"),
+    borough: 'Bronx',
+    name: 'African Market (Baboon Cafe)'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9cdf"),
+    borough: 'Bronx',
+    name: 'Blue Bay Restaurant'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9ce7"),
+    borough: 'Bronx',
+    name: 'Seashore Restaurant'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9cf1"),
+    borough: 'Bronx',
+    name: 'Bronx Grill'
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9cf4"),
+    borough: 'Bronx',
+    name: "Johnny'S Reef Restaurant"
+  },
+  {
+    _id: ObjectId("617faeb1a44cc5a6b43f9cf6"),
+    borough: 'Bronx',
+    name: 'White Castle'
+  }
+]
+Type "it" for more
