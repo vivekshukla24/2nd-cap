@@ -345,7 +345,7 @@ Type "it" for more
 //18.
 
 
-Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$match:{$or:[{borough:'Staten Island'},{borough:'Queens'},{borough:'Bronx'},{borough:'Brooklyn'}]}},{$project:{name:1,restaurant_id:1,cuisine:1,borough:1,_id:0}}])
+Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$match:{borough:{$in:['Queens','Staten Island','Bronx','Brooklyn']}}},{$project:{name:1,restaurant_id:1,cuisine:1,borough:1,_id:0}}])
 [
   {
     borough: 'Bronx',
