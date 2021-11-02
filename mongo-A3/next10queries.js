@@ -181,3 +181,163 @@ Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$matc
     restaurant_id: '40876068'
   }
 ]
+
+
+//16.
+
+
+Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$match:{name:{$regex:"Wil"}}},{$project:{name:1,borough:1,cuisine:1,restaurant_id:1,_id:0}}])
+[
+  {
+    borough: 'Brooklyn',
+    cuisine: 'Delicatessen',
+    name: "Wilken'S Fine Food",
+    restaurant_id: '40356483'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'Wild Asia',
+    restaurant_id: '40357217'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'The Williamsbridge Tavern',
+    restaurant_id: '40852754'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'Pizza',
+    name: 'Wilbel Pizza',
+    restaurant_id: '40871979'
+  }
+]
+
+
+//17.
+
+Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$match:{borough:'Bronx', $or:[{cuisine:'American '},{cuisine:'Chinese'}]}},{$project:{name:1,restaurant_id:1,cuisine:1,borough:1,_id:0}}])
+[
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'Wild Asia',
+    restaurant_id: '40357217'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'Chinese',
+    name: 'Happy Garden',
+    restaurant_id: '40363289'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'Chinese',
+    name: 'Happy Garden',
+    restaurant_id: '40364296'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'Manhem Club',
+    restaurant_id: '40364363'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'The New Starling Athletic Club Of The Bronx',
+    restaurant_id: '40364956'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'Yankee Tavern',
+    restaurant_id: '40365499'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'The Punch Bowl',
+    restaurant_id: '40366497'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'Munchtime',
+    restaurant_id: '40366748'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'Marina Delray',
+    restaurant_id: '40367161'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'Cool Zone',
+    restaurant_id: '40368022'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'Beaver Pond',
+    restaurant_id: '40368025'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'African Market (Baboon Cafe)',
+    restaurant_id: '40368026'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'Blue Bay Restaurant',
+    restaurant_id: '40369087'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'Bronx Grill',
+    restaurant_id: '40369601'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: "P & K'S Grill",
+    restaurant_id: '40369895'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: "John Mulligan'S Fireside Pub",
+    restaurant_id: '40370150'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'Quality Cafe & Restaurant',
+    restaurant_id: '40374259'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'Riverdale Diner',
+    restaurant_id: '40380253'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'Castlehill Diner',
+    restaurant_id: '40382517'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'Short Stop Restaurant',
+    restaurant_id: '40383819'
+  }
+]
+Type "it" for more
