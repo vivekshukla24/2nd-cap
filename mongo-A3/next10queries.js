@@ -118,6 +118,27 @@ Type "it" for more
 
 //14.
 
+Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$match:{name:{$regex:"^Wil"}}},{$project:{name:1,borough:1,cuisine:1,restaurant_id:1,_id:0}}])
+[
+  {
+    borough: 'Brooklyn',
+    cuisine: 'Delicatessen',
+    name: "Wilken'S Fine Food",
+    restaurant_id: '40356483'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'Wild Asia',
+    restaurant_id: '40357217'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'Pizza',
+    name: 'Wilbel Pizza',
+    restaurant_id: '40871979'
+  }
+]
 
 //15. output info about restaurant whose name ends with ces
 
