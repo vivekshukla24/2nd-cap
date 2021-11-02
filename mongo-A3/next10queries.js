@@ -598,3 +598,131 @@ Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$matc
   }
 ]
 Type "it" for more
+
+
+//20. score not greater than 10
+
+Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$match:{"grades.score":{$not:{$lt:10}}}},{$project:{name:1,restaurant_id:1,cuisine:1,borough:1,_id:0}}])
+[
+  {
+    borough: 'Queens',
+    cuisine: 'Jewish/Kosher',
+    name: 'Tov Kosher Kitchen',
+    restaurant_id: '40356068'
+  },
+  {
+    borough: 'Queens',
+    cuisine: 'Bagels/Pretzels',
+    name: 'Hot Bagels',
+    restaurant_id: '40363565'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'Chinese',
+    name: 'Happy Garden',
+    restaurant_id: '40364296'
+  },
+  {
+    borough: 'Manhattan',
+    cuisine: 'American ',
+    name: '21 Club',
+    restaurant_id: '40364362'
+  },
+  {
+    borough: 'Manhattan',
+    cuisine: 'American ',
+    name: '7B Bar',
+    restaurant_id: '40364518'
+  },
+  {
+    borough: 'Manhattan',
+    cuisine: 'Italian',
+    name: 'Marchis Restaurant',
+    restaurant_id: '40364668'
+  },
+  {
+    borough: 'Brooklyn',
+    cuisine: 'American ',
+    name: 'Melody Lanes',
+    restaurant_id: '40364889'
+  },
+  {
+    borough: 'Manhattan',
+    cuisine: 'French',
+    name: 'Le Perigord',
+    restaurant_id: '40365414'
+  },
+  {
+    borough: 'Manhattan',
+    cuisine: 'Irish',
+    name: "Moran'S Chelsea",
+    restaurant_id: '40365526'
+  },
+  {
+    borough: 'Manhattan',
+    cuisine: 'Italian',
+    name: 'V & T Restaurant',
+    restaurant_id: '40365577'
+  },
+  {
+    borough: 'Staten Island',
+    cuisine: 'American ',
+    name: "Joyce'S Tavern",
+    restaurant_id: '40365692'
+  },
+  {
+    borough: 'Manhattan',
+    cuisine: 'Italian',
+    name: 'Il Vagabondo Restaurant',
+    restaurant_id: '40365709'
+  },
+  {
+    borough: 'Queens',
+    cuisine: 'Italian',
+    name: 'Parkside Restaurant',
+    restaurant_id: '40365841'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'Irish',
+    name: 'Mcdwyers Pub',
+    restaurant_id: '40365893'
+  },
+  {
+    borough: 'Manhattan',
+    cuisine: 'Chinese',
+    name: 'Hop Kee Restaurant',
+    restaurant_id: '40365942'
+  },
+  {
+    borough: 'Queens',
+    cuisine: 'Pizza',
+    name: 'Margherita Pizza',
+    restaurant_id: '40366002'
+  },
+  {
+    borough: 'Manhattan',
+    cuisine: 'Italian',
+    name: 'Nanni Restaurant',
+    restaurant_id: '40366157'
+  },
+  {
+    borough: 'Queens',
+    cuisine: 'Italian',
+    name: 'Don Peppe',
+    restaurant_id: '40366230'
+  },
+  {
+    borough: 'Queens',
+    cuisine: 'Irish',
+    name: 'Irish Cottage',
+    restaurant_id: '40366549'
+  },
+  {
+    borough: 'Staten Island',
+    cuisine: 'American ',
+    name: "Li Greci'S Staaten Restaurant",
+    restaurant_id: '40366711'
+  }
+]
+Type "it" for more
