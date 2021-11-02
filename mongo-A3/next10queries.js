@@ -341,3 +341,131 @@ Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$matc
   }
 ]
 Type "it" for more
+
+//18.
+
+
+Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$match:{$or:[{borough:'Staten Island'},{borough:'Queens'},{borough:'Bronx'},{borough:'Brooklyn'}]}},{$project:{name:1,restaurant_id:1,cuisine:1,borough:1,_id:0}}])
+[
+  {
+    borough: 'Bronx',
+    cuisine: 'Bakery',
+    name: 'Morris Park Bake Shop',
+    restaurant_id: '30075445'
+  },
+  {
+    borough: 'Brooklyn',
+    cuisine: 'Hamburgers',
+    name: "Wendy'S",
+    restaurant_id: '30112340'
+  },
+  {
+    borough: 'Brooklyn',
+    cuisine: 'American ',
+    name: 'Riviera Caterer',
+    restaurant_id: '40356018'
+  },
+  {
+    borough: 'Queens',
+    cuisine: 'Jewish/Kosher',
+    name: 'Tov Kosher Kitchen',
+    restaurant_id: '40356068'
+  },
+  {
+    borough: 'Queens',
+    cuisine: 'American ',
+    name: 'Brunos On The Boulevard',
+    restaurant_id: '40356151'
+  },
+  {
+    borough: 'Staten Island',
+    cuisine: 'Jewish/Kosher',
+    name: 'Kosher Island',
+    restaurant_id: '40356442'
+  },
+  {
+    borough: 'Brooklyn',
+    cuisine: 'Delicatessen',
+    name: "Wilken'S Fine Food",
+    restaurant_id: '40356483'
+  },
+  {
+    borough: 'Brooklyn',
+    cuisine: 'American ',
+    name: 'Regina Caterers',
+    restaurant_id: '40356649'
+  },
+  {
+    borough: 'Brooklyn',
+    cuisine: 'Ice Cream, Gelato, Yogurt, Ices',
+    name: 'Taste The Tropics Ice Cream',
+    restaurant_id: '40356731'
+  },
+  {
+    borough: 'Bronx',
+    cuisine: 'American ',
+    name: 'Wild Asia',
+    restaurant_id: '40357217'
+  },
+  {
+    borough: 'Brooklyn',
+    cuisine: 'American ',
+    name: 'C & C Catering Service',
+    restaurant_id: '40357437'
+  },
+  {
+    borough: 'Brooklyn',
+    cuisine: 'Chinese',
+    name: 'May May Kitchen',
+    restaurant_id: '40358429'
+  },
+  {
+    borough: 'Brooklyn',
+    cuisine: 'Jewish/Kosher',
+    name: 'Seuda Foods',
+    restaurant_id: '40360045'
+  },
+  {
+    borough: 'Brooklyn',
+    cuisine: 'Ice Cream, Gelato, Yogurt, Ices',
+    name: 'Carvel Ice Cream',
+    restaurant_id: '40360076'
+  },
+  {
+    borough: 'Queens',
+    cuisine: 'Ice Cream, Gelato, Yogurt, Ices',
+    name: 'Carvel Ice Cream',
+    restaurant_id: '40361322'
+  },
+  {
+    borough: 'Brooklyn',
+    cuisine: 'Delicatessen',
+    name: 'Nordic Delicacies',
+    restaurant_id: '40361390'
+  },
+  {
+    borough: 'Brooklyn',
+    cuisine: 'American ',
+    name: 'The Movable Feast',
+    restaurant_id: '40361606'
+  },
+  {
+    borough: 'Queens',
+    cuisine: 'Delicatessen',
+    name: "Sal'S Deli",
+    restaurant_id: '40361618'
+  },
+  {
+    borough: 'Queens',
+    cuisine: 'Delicatessen',
+    name: "Steve Chu'S Deli & Grocery",
+    restaurant_id: '40361998'
+  },
+  {
+    borough: 'Brooklyn',
+    cuisine: 'Hamburgers',
+    name: 'White Castle',
+    restaurant_id: '40362344'
+  }
+]
+Type "it" for more
