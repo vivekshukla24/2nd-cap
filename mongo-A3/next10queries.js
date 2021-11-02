@@ -116,4 +116,47 @@ Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$matc
 ]
 Type "it" for more
 
-14.
+//14.
+
+
+//15. output info about restaurant whose name ends with ces
+
+Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$match:{name:{$regex:"ces$"}}},{$project:{name:1,borough:1,cuisine:1,restaurant_id:1,_id:0}}])
+[
+  {
+    borough: 'Manhattan',
+    cuisine: 'American ',
+    name: 'Pieces',
+    restaurant_id: '40399910'
+  },
+  {
+    borough: 'Queens',
+    cuisine: 'American ',
+    name: 'S.M.R Restaurant Services',
+    restaurant_id: '40403857'
+  },
+  {
+    borough: 'Manhattan',
+    cuisine: 'American ',
+    name: 'Good Shepherd Services',
+    restaurant_id: '40403989'
+  },
+  {
+    borough: 'Queens',
+    cuisine: 'Ice Cream, Gelato, Yogurt, Ices',
+    name: "The Ice Box-Ralph'S Famous Italian Ices",
+    restaurant_id: '40690899'
+  },
+  {
+    borough: 'Brooklyn',
+    cuisine: 'Jewish/Kosher',
+    name: 'Alices',
+    restaurant_id: '40782042'
+  },
+  {
+    borough: 'Manhattan',
+    cuisine: 'American ',
+    name: 'Re: Sources',
+    restaurant_id: '40876068'
+  }
+]
