@@ -2,23 +2,32 @@ abstract class employee{
 abstract public void salary();
 }
 class manager extends employee{
-    int incentive=100;
-    int manager_salary=500;
+    int sal,incentive;
+
+    public manager(int sal,int incentive){
+        this.sal=sal;
+        this.incentive=incentive;
+    }
     public void salary(){
-        System.out.println("Manager Salary:"+(incentive+manager_salary));
+        System.out.println("Manager Salary:"+(sal+incentive));
     }
 }
 class labour extends employee{
-    int overtime=30;
-    int labour_salary=150;
+    int overtime;
+    int labour_salary;
+
+    public labour(int labour_salary,int overtime){
+        this.labour_salary=labour_salary;
+        this.overtime=overtime;
+    }
     public void salary(){
-        System.out.println("Labour Salary:"+(overtime+labour_salary));
+        System.out.println("Labour Salary:"+(labour_salary+overtime));
     }
 }
 public class client {
     public static void main(String[] args) {
-        manager m=new manager();
-        labour l=new labour();
+        manager m=new manager(500,100);
+        labour l=new labour(150,40);
         m.salary();
         l.salary();
     }
