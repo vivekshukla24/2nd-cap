@@ -23,13 +23,16 @@ class square extends shape{
 }
 public class main{
     public static void main(String[] args) {
-        line l=new line();
-        l.draw();
-        rectangle r=new rectangle();
-        r.draw();
-        cube c=new cube();
-        c.draw();
-        square s=new square();
-        s.draw();
+        shape l=new line();
+        shape r=new rectangle();
+        shape c=new cube();
+        shape s=new square();
+        draw_All(l);
+        draw_All(r);
+        draw_All(c);
+        draw_All(s);
+    }
+    public static void draw_All(shape obj){
+        obj.draw();
     }
 }
