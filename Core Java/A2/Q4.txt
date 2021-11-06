@@ -1,0 +1,5 @@
+1. IDE prompts me to change the class to abstract
+2. It shows error while trying to create object of abstract class.
+3. If we don't it prompts the programmer to implement all methods
+4,5. It throws an error and program doesn't compile.
+6.we can have both type of methods in an abstract class, either the function can be defined with the body of it can be undefined with the abstract keyword.
