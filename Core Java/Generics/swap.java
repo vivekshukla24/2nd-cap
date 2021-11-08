@@ -1,3 +1,5 @@
+//non generic classes can have genric methods
+
 public class swap {
     public static void main(String[] args) {
         int[] arr = {12,6,8,3,5,9,45};
