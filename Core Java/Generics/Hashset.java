@@ -11,9 +11,8 @@ public class sets {
         act.add(b);
         act.add(c);
         act.add(d);
-        for(employee e :act){
-            e.displayDetails();
-        }
+        //printing all the details of the objects
+        System.out.println(act);
     }
 }
 class employee{
@@ -25,6 +24,11 @@ class employee{
         this.salary=salary;
         this.dept=dept;
     }
+    @Override
+    public String toString(){
+        return "{ID: "+id+" Name: "+name+" Salary: "+salary+" Department: "+dept+"}";
+    }
+    @Deprecated
     public void displayDetails(){
         System.out.println("{ID: "+id+" Name: "+name+" Salary: "+salary+" Department: "+dept+"}");
     }
