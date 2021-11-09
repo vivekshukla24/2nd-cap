@@ -11,6 +11,7 @@ public class Q2hashset {
         no_duplicate.add(x2);
         no_duplicate.add(x3);
         no_duplicate.add(x4);
+        //the duplicate object addition
         no_duplicate.add(x2);
         System.out.println(no_duplicate);
 
