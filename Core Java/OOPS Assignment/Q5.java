@@ -32,6 +32,7 @@ public class main{
         draw_All(c);
         draw_All(s);
     }
+    //just one method to call methods from four different classes
     public static void draw_All(shape obj){
         obj.draw();
     }
