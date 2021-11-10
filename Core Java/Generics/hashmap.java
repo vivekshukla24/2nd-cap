@@ -1,6 +1,6 @@
 import java.util.HashMap;
 import java.util.Random;
-
+//put random numbers in hashmap
 public class nums {
     public static void main(String[] args) {
         HashMap<Integer,Double> store=new HashMap<Integer,Double>();
