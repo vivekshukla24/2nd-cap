@@ -7,15 +7,12 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 @interface test{
+  int testCaseNo();
 }
 
 public class Q1test {
-    @test
-    public method1(){
-        System.out.println("Test Cases");
-    }
-    @test
-    public method2(){
-        System.out.println("Some test cases");
-    }
+  @Test(testCaseNo = 1)
+  public static void main(String[] args) {
+
+  }
 }
