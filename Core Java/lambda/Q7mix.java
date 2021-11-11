@@ -8,6 +8,7 @@ public class Q7mix {
         foo.put(2,"done");
         foo.put(3,"join");
         foo.put(4,"aggregate");
+        //this mwthod will make the key value pairs a string using string builder
         foo.entrySet().forEach(t-> mix.append(t));
         System.out.println(mix);
     }
