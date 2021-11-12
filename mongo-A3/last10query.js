@@ -125,6 +125,20 @@ Atlas atlas-3gp48w-shard-0 [primary] restaurants> db.addresses.aggregate([{$matc
 ]
 Type "it" for more
 
+24) db.addresses.find( {$and:[{"address.coord.1" : {$lt : 52.0}},{"address.coord.1" : {$gt : 42.0}}]},{"restaurant_id" : 1,"name":1,"address":1,_id:0});
 
+25)	db.addresses.find({}).sort({"name":1})
 
-//Q. 22
+26)	db.addresses.find({}).sort({"name":-1})
+
+27)	db.addresses.find({}).sort({"cuisine":1,"borough":-1})
+
+28)	db.addresses.find({"address.street":{$exists:true}})
+
+29)	db.addresses.find({"address.street":{$type:1}})
+
+30)	db.addresses.find(  {"grades.score" : {$mod : [7,0]} },{"restaurant_id" : 1,"name":1,"grades":1});
+
+31)	db.addresses.find({"name":/.*mon.*/},{"restaurant_id" : 1,"name":1,"address.coord":1})
+
+32)	db.addresses.find({"name":/^Mad/},{"restaurant_id" : 1,"name":1,"address.coord":1})
