@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 public class Q6replace {
     public static void main(String[] args) {
         List<String> words = new ArrayList<>();
+        //adding words to the lists
         words.add("enough");
         words.add("india");
         words.add("this");
