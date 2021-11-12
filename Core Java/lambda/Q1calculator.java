@@ -31,7 +31,8 @@ public class Q1calculator {
                 break;
         }
     }
-    interface Calculator{
-        void foo(double a, double b);
-    }
+}
+
+interface Calculator{
+    void foo(double a, double b);
 }

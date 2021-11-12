@@ -22,8 +22,8 @@ public class Q2Orders {
         determine.decision(price,status);
 
 
-    }
-    interface acceptance{
-        void decision(int a,int b);
-    }
+    }    
+}
+interface acceptance{
+    void decision(int a,int b);
 }
