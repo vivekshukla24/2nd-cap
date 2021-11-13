@@ -17,8 +17,7 @@ public class Q5menuDriven {
             case 1: {
                 System.out.println("Enter the Price of item " + item_number + ": ");
                 String price = s.next();
-                Files.writeString(Path.of(pathtofile), price, StandardOpenOption.APPEND);
-                Files.writeString(Path.of(pathtofile), "\n", StandardOpenOption.APPEND);
+                Files.writeString(Path.of(pathtofile), price+"\n", StandardOpenOption.APPEND);
                 System.out.println("Price has been saved in file");
                 break;
             }
