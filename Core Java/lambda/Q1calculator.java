@@ -32,7 +32,7 @@ public class Q1calculator {
         }
     }
 }
-
+//Only one interface will work for all the lambda expression in the calculator class
 interface Calculator{
     void foo(double a, double b);
 }

@@ -8,10 +8,10 @@ public class bank_s {
             cust1.withdraw(-50);
         }
         catch (InsufficientBalanceException e){
-            System.out.println("Unfortunately, You Don't have Sufficient Balance in your account");
+            System.out.println("Insufficient Funds: Unfortunately, You Don't have Sufficient Balance in your account");
         }
         catch (illeagalBankTransactionException f){
-            System.out.println("This is technically an illegal amount, You cannot withdraw in negative numbers");
+            System.out.println(" Illegal Entry: This is technically an illegal amount, You cannot withdraw in negative numbers");
         }
     }
 }
