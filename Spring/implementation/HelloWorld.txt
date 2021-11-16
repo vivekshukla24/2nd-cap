@@ -1,0 +1,33 @@
+//Java code Part
+package Capgemini.Spring;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+class greet {
+    String name;
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void greet(){
+        System.out.println("Hello World I'm "+getName());
+    }
+}
+public class main{
+    public static void main(String[] args) {
+        ClassPathXmlApplicationContext context= new ClassPathXmlApplicationContext("Spring.xml");
+        greet say= (greet) context.getBean("greet");
+        say.greet();
+    }
+}
+
+//Xml Part
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<bean id="greet" class="Capgemini.Spring.greet">
+<property name="name" value="Vivek"/>
+</bean>
+</beans>
