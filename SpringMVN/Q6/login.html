@@ -1,0 +1,106 @@
+<html>
+<head xmlns:th="http://www.thymeleaf.org">
+<title>The Auth Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+}
+label{
+	color: #000000;
+	font-size: 1em;
+	justify-content: center;
+	display: flex;
+	margin: 2px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+button{
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #573b8a;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+p {
+  color: red;
+  text-transform: lowercase;
+  text-align: center;
+}
+</style>
+<body>
+<form th:action="@{/login}" method="post" class="form-horizontal" th:object="${LoginData}">
+<fieldset>
+<legend>Log in to your Account</legend>
+
+<div class="form-group">
+  <label  class="col-md-4 control-label" for="username">Username</label>  
+  <div class="col-md-5">
+  <input th:value="${LoginData.username}"  id="username" name="username" type="text" class="form-control input-md"></input>
+    <p th:each="err : ${#fields.errors('username')}" th:text="${err}"></p>
+  </div>
+</div>
+<div class="form-group">
+  <label  class="col-md-4 control-label" for="password">Password</label>
+  <div class="col-md-5">
+    <input th:value="${LoginData.password}" id="password" name="password" type="password" placeholder="Secure Your Account" class="form-control input-md"/>
+      <p th:each="err : ${#fields.errors('password')}" th:text="${err}"></p>  
+  </div>
+</div>
+<div class="form-group">
+  <label  class="col-md-4 control-label" for="email">Email Address</label>  
+  <div class="col-md-5">
+  <input  th:value"${LoginData.email}" id="email" name="email" type="text"  class="form-control input-md"/>
+    <p th:each="err : ${#fields.errors('email')}" th:text="${err}"></p>   
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="contact">Contact</label>  
+  <div class="col-md-5">
+  <input th:value="${LoginData.contact} "id="contact" name="contact" type="text" class="form-control input-md"/>  
+    <p th:each="err : ${#fields.errors('contact')}" th:text="${err}"></p>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="city">Choose Your City</label>
+  <div class="col-md-4">
+    <select th:value"${LoginData.city}" id="city" name="city" placeholder="Choose" class="form-control">
+    <option value="none" selected disabled hidden>
+      <option value="delhi">Delhi</option>
+      <option value="pune">Pune</option>
+      <option value="kochi">Kochi</option>
+      <option value="lucknow">lucknow</option>
+    </select>
+    <p th:each="err : ${#fields.errors('city')}" th:text="${err}"></p>
+  </div>
+</div>
+<div class="form-group">
+  <label  class="col-md-4 control-label" for="zipcode">Zipcode</label>  
+  <div class="col-md-4">
+  <input th:value="${LoginData.zipcode}" id="zipcode" name="zipcode" type="String" placeholder="Choose" class="form-control input-md"/>
+  <p th:each="err : ${#fields.errors('zipcode')}" th:text="${err}"></p>
+  </div>
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>
+</fieldset>
+</form>
+</body>
+</html>
